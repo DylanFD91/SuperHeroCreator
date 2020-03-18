@@ -74,13 +74,13 @@ namespace SuperheroCreator.Controllers
                 var superheroInDB = _context.Superheroes.Where(v => v.Id == id).SingleOrDefault();
 
                 //option 1 -- maybe? need to test
-                superheroInDB = superhero;
+                //superheroInDB = superhero;
 
                 //option 2 -- setting individual props (getting better)
                 //superheroInDB.AlterEgo = superhero.AlterEgo;
 
                 //option 3 -- best option?
-                //_context.Superheroes.Update(superhero);
+                _context.Superheroes.Update(superhero);
 
                 _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
